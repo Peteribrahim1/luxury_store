@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "927376558748",
+    "project_id": "luxury-store-48810",
+    "storage_bucket": "luxury-store-48810.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927376558748:android:abc7ffd7cff3bbea87fb59",
+        "android_client_info": {
+          "package_name": "com.example.luxury_store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927376558748-46u0jg46flpiqgvem13mrckk20n0dffk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEJWRTTOAU4OoC-XanBqgiO21PBualGDU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "927376558748-46u0jg46flpiqgvem13mrckk20n0dffk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
