@@ -1,32 +1,52 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:luxury_store/models/user.dart' as model;
 
 class AuthMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
+  Future<model.User> getUserDetails() async {
+    User currentUser = _auth.currentUser!;
+
+    DocumentSnapshot snap =
+    await _firestore.collection('users').doc(currentUser.uid).get();
+
+    return model.User.fromSnap(snap);
+  }
+
 
   final currentUser = FirebaseAuth.instance.currentUser;
   //signup user
   Future<String> signUpUser({
     required String email,
     required String password,
-    required String name,
+    required String username,
   }) async {
     String res = 'Please enter all the fields';
     try {
-      if (email.isNotEmpty && password.isNotEmpty && name.isNotEmpty) {
+      if (email.isNotEmpty && password.isNotEmpty && username.isNotEmpty) {
         // register user
         UserCredential cred = await _auth.createUserWithEmailAndPassword(
             email: email, password: password);
 
         print(cred.user!.uid);
         //add user to database
-        await _firestore.collection('users').doc(cred.user!.uid).set({
-          'name': name,
-          'email': email,
-          'uid': cred.user!.uid,
-        });
+        model.User user = model.User(
+          username: username,
+          uid: cred.user!.uid,
+          email: email,
+        );
+
+        // await _firestore.collection('users').doc(cred.user!.uid).set({
+        //   'username': username,
+        //   'email': email,
+        //   'uid': cred.user!.uid,
+        // });
+        await _firestore.collection('users').doc(cred.user!.uid).set(
+          user.toJson(),
+        );
         res = 'success';
       }
     } on FirebaseAuthException catch (err) {
@@ -75,11 +95,14 @@ class AuthMethods {
   }
 
   //add to cart
-  Future<void> cart(String amount, String uid, String name,
+  Future<void> cart(String amount, String name,
       String image) async {
+    print('hello');
+    print(FirebaseAuth.instance.currentUser?.uid);
+    String? uid = FirebaseAuth.instance.currentUser?.uid;
     try {
-      if (name.isNotEmpty) {
-      //  String commentId = const Uuid().v1();
+      if (name.isNotEmpty && amount.isNotEmpty && image.isNotEmpty) {
+
         await _firestore
             .collection('cart')
             .doc(uid)

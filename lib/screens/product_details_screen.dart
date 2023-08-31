@@ -90,7 +90,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen>
                             });
                             await AuthMethods().cart(
                                 widget.item.price.toString(),
-                                user!.uid,
+                                //user!.uid,
                                 widget.item.name,
                                 widget.item.image);
 
@@ -143,10 +143,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen>
                 child: TabBarView(
                   controller: _tabController,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: Column(
-                        children: const [
+                        children: [
                           Text(
                             'As in handbags, the double ring and bar design defines the wallet shape, highlighting the front flap closure which is tucked inside the hardware. Completed with an organizational interior, the black leather wallet features a detachable chain.',
                             style: Styles.descTextStyle,
@@ -159,10 +159,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen>
                       ),
                     ),
                     Container(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      child: const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Column(
-                          children: const [
+                          children: [
                             Text(
                               'As in handbags, the double ring and bar design defines the wallet shape, highlighting the front flap closure which is tucked inside the hardware. Completed with an organizational interior, the black leather wallet features a detachable chain.',
                               style: Styles.descTextStyle,
