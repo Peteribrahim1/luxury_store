@@ -1,16 +1,30 @@
-# luxury_store
+# LUXURY_STORE
 
-A new Flutter project.
+## DESCRIPTION OF THE APP
+Luxury_store is an amazing e_commerce app that sells bags. A user is expected to register on the app and then is given the access to purchase any bag of their choice and the bag will be delivered within the stipulated time. User information is well secured and protected within the app. The user interface of the app is nice and intuitive to use.
 
-## Getting Started
+## DESCRIPTION OF CODE BASE
 
-This project is a starting point for a Flutter application.
+## HOW TO USE THE APP
 
-A few resources to get you started if this is your first Flutter project:
+## DESCRIPTION OF LIBRARIES USED
+1. ### Provider
+   I made use of the provider state management tool in sharing of data within the app.
+   
+2. ### http
+   I made use of the http package to enable me make network calls to the API.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+3. ### shared_preferences
+   I made use of shared_preferences to store and retrieve username information.
+   
+4. ### flutter_native_splash
+   I made use of flutter native splash to implement a splash screen and also to remove the white screen that comes up at the start of flutter apps.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## CHALLENGES FACED AND HOW I OVERCAME
+   There were no major challenges while building this app.
+   
+## FEATURES I WOULD LOVE TO ADD IF I HAD MORE TIME
+   Automatic language detector.
+   
+## LINK TO THE APK UPLOADED ON GOOGLEDRIVE
+ 
